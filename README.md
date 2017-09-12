@@ -9,3 +9,5 @@ trying from terminal to make a change
 
 
 editing from R studio
+
+Welcome to all visitors (STAT545 instructor/TAs, STAT545 peers, and anyone else until my student private account is activated)
