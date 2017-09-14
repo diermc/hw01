@@ -25,8 +25,8 @@ I am studying my masters under Marie Auger-Methe on penguin foraging ecology (mo
 
 # Past life
 I was born in Ontario.
-I lived in halifax for the past 5 years for completing my undergrad at Dalhousie University [^1]
+*I lived in halifax for the past 5 years for completing my undergrad at Dalhousie University
 
-[^1]: Halifax is a beautiful city.
++ Halifax is a beautiful city.
 
 
