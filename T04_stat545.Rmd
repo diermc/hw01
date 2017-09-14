@@ -42,10 +42,10 @@ x+y #shows output in box below
 This is text, that will show up in the document 
 
 you can also click the pg lines on the top right of the menu (beside run command) to list the headers of the document 
-#title 
+# title 
 main uses one hash
-##subtitle 
-###subsubtitle 
+## subtitle 
+### subsubtitle 
 add more for more sections, all show up on the side bar to the right now, able to click for easy navigating of document 
 
 
