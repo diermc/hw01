@@ -17,4 +17,14 @@ I got the changes into readme through the terminal with Joey's lovely assistance
 Markdown I will try on thursday with the class. 
 
 *can i make this bold*
+**two is bold** *one is italics* and they show up in different colours 
+
+## I am Sarah
+#Research
+I am studying my masters under Marie Auger-Methe on penguin foraging ecology (more or less)
+#Past life
+I was born in Ontario
+I lived in halifax for the past 5 years for completing my undergrad at Dalhousie University [^1]
+[^1]: Halifax is a beautiful city
+
 
