@@ -2,9 +2,9 @@
 title: "stat545_04T"
 author: "Sarah"
 date: "`r format(Sys.Date())`"
-output: 
-  html_document: 
-    keep_md: yes
+output:
+  html_document: default
+  keep_md: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -47,6 +47,37 @@ main uses one hash
 ## subtitle 
 ### subsubtitle 
 add more for more sections, all show up on the side bar to the right now, able to click for easy navigating of document 
+
+
+
+ready to start hwk, noting some tips from the page first 
+
+# Error pinpointing
+
+## Insert a chunk in your .Rmd document so that it renders even when there are errors. 
+Some errors are easier to diagnose if you can execute specific R statements during rendering and leave more evidence behind for forensic examination. Put this chunk:
+
+``{r setup, include = FALSE, cache = FALSE}  
+knitr::opts_chunk$set(error = TRUE)  
+``
+
+near the top of your R Markdown document if you want to soldier on through errors, i.e. turn foo.Rmd into  foo.md and/or foo.html no matter what. This is also helpful if you are writing a tutorial and want to demo code that throws an error. You might want to keep this as an RStudio snippet for easy insertion.
+
+## Tolerate errors in one specific chunk. 
+If it’s undesirable to globally accept errors, you can still do this for a specific chunk like so:
+
+``{r wing-and-a-prayer, error = TRUE}  
+## your sketchy code goes here ;) 
+``
+
+## basic checks 
+
+```{r}
+getwd()
+list.files()
+```
+
+# Don’t try to change working directory within an R Markdown document. Just don’t. That is all.
 
 
 
