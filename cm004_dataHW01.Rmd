@@ -1,0 +1,119 @@
+---
+title: "hwk01_gapminder"
+author: "Sarah"
+date: "September 19, 2017"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+#Loading packages 
+
+```{r}
+#install.packages("gapminder") #caught up at 10:30 in class, poor notes - re-read #instructions to follow
+#install.packages("tidyverse")
+library(gapminder)
+library(tidyverse)
+```
+
+#Meet gapminder
+
+```{r}
+head(gapminder)
+```
+
+```{r}
+tail(gapminder)
+```
+
+```{r}
+str(gapminder)
+```
+
+```{r}
+summary(gapminder)
+```
+
+```{r}
+glimpse(gapminder)
+
+```
+
+```{r}
+as_tibble(iris)
+```
+
+Ways to query basic info on a data frame:
+
+```{r}
+names(gapminder)
+ncol(gapminder)
+length(gapminder)
+dim(gapminder)
+nrow(gapminder)
+```
+
+Statistical overview
+```{r}
+summary(gapminder)
+```
+
+
+Also can visualize and place plots 
+```{r}
+plot(lifeExp ~ year, gapminder)
+
+```
+
+Look at the variables inside a data frame: 
+
+```{r}
+head(gapminder$lifeExp)
+summary(gapminder$lifeExp)
+hist(gapminder$lifeExp)
+```
+
+```{r}
+#year is an integer variable but behaves like a categorical variable becasue there are so few unique values 
+summary(gapminder$year)
+table(gapminder$year)
+
+```
+
+
+```{r}
+#truely categorical are country and continent 
+
+class(gapminder$continent)
+summary(gapminder$continent)
+levels(gapminder$continent)
+nlevels(gapminder$continent)
+
+str(gapminder$continent) #R is really only storing integer codes 
+
+```
+
+Watch out for boobytraps! "I recommend you resolve to learn how to properly care and feed for factors. The pros far outweigh the cons. Specifically in modelling and figure-making, factors are anticipated and accommodated by the functions and packages you will want to exploit."
+
+
+Count and display
+-to quickly see that African countries are well represented in this dataset
+```{r}
+table(gapminder$continent)
+barplot(table(gapminder$continent))
+```
+
+#ggplot2 play
+```{r}
+p <- ggplot(filter(gapminder, continent != "Oceania"),
+            aes(x = gdpPercap, y = lifeExp)) # just initializes
+p <- p + scale_x_log10() # log the x axis the right way
+p + geom_point() # scatterplot
+p + geom_point(aes(color = continent)) # map continent to color
+p + geom_point(alpha = (1/3), size = 3) + geom_smooth(lwd = 3, se = FALSE)
+p + geom_point(alpha = (1/3), size = 3) + facet_wrap(~ continent) +
+  geom_smooth(lwd = 1.5, se = FALSE)
+```
+
+*pretty*
+
